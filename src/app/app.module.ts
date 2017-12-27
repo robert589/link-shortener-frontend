@@ -7,7 +7,12 @@ import { HttpModule } from '@angular/http';
 
 export const routes : Routes = [{
   path: '',
-  loadChildren: './pages/home-page/home-page.module#HomePageModule'
+  loadChildren: './pages/home-page/home-page.module#HomePageModule',
+
+}, {
+  path: 'i',
+  loadChildren: './pages/link-page/link-page.module#LinkPageModule',
+
 }];
 
 @NgModule({

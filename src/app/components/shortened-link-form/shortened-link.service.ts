@@ -19,7 +19,20 @@ export class ShortenedLinkService {
     params.append('link', link);
 
     return this._http.post("./api/link/default/add", params, options)
-                .map((response) => response.json())
+                .map((response) => response.json());
+  }
+
+  getRealLink(shortenedKey : string) : Observable<string> {
+    let headers = new Headers({
+      'Content-Type': 'application/x-www-form-urlencoded'
+    });
+    let options = new RequestOptions({ headers: headers });
+
+    let params: URLSearchParams = new URLSearchParams();
+    params.append('shortenedKey', shortenedKey);
+
+    return this._http.get("./api/link/default/get?" + params.toString(), options)
+                .map((response) => response.json());
   }
 
   getClientLink() : string {
