@@ -31,6 +31,10 @@ export class StatsPageComponent implements OnInit {
     this.getData();
   }
 
+  redirectToLink(link : string) {
+    window.open(link, "_blank");
+  }
+
   getData() {
     this._shortenedLinkService.total() 
     .subscribe(total => this.total = total);

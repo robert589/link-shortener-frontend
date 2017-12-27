@@ -9,6 +9,9 @@
     </div>
   </div>
   <div class="shortened-link-form-footer" *ngIf="shortenedLink">
-    Shortened Link: {{ getClientLink() + shortenedLink }}
+    Shortened Link:        
+    <span class="link" (click)="redirectToLink()">
+      {{ getClientLink() + shortenedLink }}
+    </span>
   </div>
 </div>

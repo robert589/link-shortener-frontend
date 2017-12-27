@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ShortenedLinkService } from './shortened-link.service';
 import { LinkService } from '../../link.service';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-shortened-link-form',
@@ -17,6 +18,7 @@ export class ShortenedLinkFormComponent implements OnInit {
   errorMessage : string = null;
 
   constructor(private _shortenedLinkService : ShortenedLinkService,
+    private _router : Router,
     private _linkService : LinkService) { }
 
   ngOnInit() {
@@ -38,6 +40,10 @@ export class ShortenedLinkFormComponent implements OnInit {
         .subscribe((shortenedLink : string) => {
       this.shortenedLink = shortenedLink;
     })
+  }
+
+  redirectToLink() {
+    window.open(this.getClientLink() + this.shortenedLink, "_blank");
   }
 
   isLink(link : string) : boolean {

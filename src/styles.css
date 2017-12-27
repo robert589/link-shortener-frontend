@@ -9,3 +9,12 @@ body {
     font-size: 14px;
     color: red;
 }
+
+.link {
+    color: blue;
+}
+
+.link:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
