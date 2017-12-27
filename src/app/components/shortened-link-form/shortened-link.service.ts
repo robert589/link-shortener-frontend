@@ -35,6 +35,20 @@ export class ShortenedLinkService {
                 .map((response) => response.json());
   }
 
+  incrementVisit(shortenedKey : string) : Observable<boolean> {
+    let headers = new Headers({
+      'Content-Type': 'application/x-www-form-urlencoded'
+    });
+    let options = new RequestOptions({ headers: headers });
+
+    let params: URLSearchParams = new URLSearchParams();
+    params.append('shortenedKey', shortenedKey);
+
+    return this._http.get("./api/link/default/increment-visit?" + params.toString(), options)
+                .map((response) => response.json());
+  
+  }
+
   getClientLink() : string {
     return AppLocal.CURRENT_URL + "i/";
   }

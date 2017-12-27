@@ -23,9 +23,15 @@ export class LinkPageComponent implements OnInit {
     this._activatedRoute.params.subscribe((params : Params) => {
       let shortenedKey : string = params['i'];
       if(shortenedKey) {
+        this.incrementVisit(shortenedKey);
         this.getRealLink(shortenedKey);
       }
     });
+  }
+
+  incrementVisit(shortenedKey : string) {
+    this._shortenedLinkService.incrementVisit(shortenedKey)
+        .subscribe();
   }
 
   getRealLink(shortenedKey : string) {
