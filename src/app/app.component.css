@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+}
+
+.navbar {
+    top: 0;
+    position: fixed;
+    border-bottom: 1px solid lightgray;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    z-index: 1;
+}
+
+.navbar-item {
+    padding: 8px;
+}
+
+.navbar-item:hover {
+    cursor: pointer;
+    background: lightgray;
+}
+
+.container {
+    margin-top: 40px;
+}

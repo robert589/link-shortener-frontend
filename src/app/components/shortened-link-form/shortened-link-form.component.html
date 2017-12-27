@@ -1,0 +1,14 @@
+<div class="shortened-link-form">
+
+  <div class="form">
+    <input [(ngModel)]="link" placeholder="Shortened Link Here">
+    <button class="btn" type="button" (click)="add()">Shortened</button>
+
+    <div class="form-error">
+      {{ errorMessage }}
+    </div>
+  </div>
+  <div class="shortened-link-form-footer" *ngIf="shortenedLink">
+    Shortened Link: {{ getClientLink() + shortenedLink }}
+  </div>
+</div>

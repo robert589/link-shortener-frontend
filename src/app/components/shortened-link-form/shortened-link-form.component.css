@@ -1,0 +1,18 @@
+.shortened-link-form > .form {
+    padding: 8px;
+    text-align: center;
+}
+
+.shortened-link-form > .form > input {
+    padding: 8px;
+    border: 1px solid lightgray;
+}
+
+.shortened-link-form > .form > button {
+    border: 0;
+    padding: 8px;
+}
+
+.shortened-link-form > .form > button:hover {
+    cursor: pointer;
+}
