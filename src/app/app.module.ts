@@ -13,6 +13,10 @@ export const routes : Routes = [{
   path: 'i',
   loadChildren: './pages/link-page/link-page.module#LinkPageModule',
 
+}, {
+  path: 'stats',
+  loadChildren: './pages/stats-page/stats-page.module#StatsPageModule',
+
 }];
 
 @NgModule({

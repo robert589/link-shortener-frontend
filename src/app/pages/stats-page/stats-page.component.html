@@ -1,0 +1,30 @@
+<div class="stats-page">
+
+  <ngx-datatable
+    #table
+    class='material'
+    [columnMode]="'force'"
+    [headerHeight]="50"
+    [footerHeight]="50"
+    [rowHeight]="'auto'"
+    [externalPaging]="true"
+    [limit]="pageSize"
+    [rows]='data'
+    [count]="total"
+    [offset]="page - 1"
+    (page)="handleOnPageChange($event)">
+  
+    <ngx-datatable-column name="Link">
+      <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+        {{ row.link }}
+      </ng-template>
+    </ngx-datatable-column>
+  
+    <ngx-datatable-column name="Count">
+      <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+        {{ row.count }}
+      </ng-template>
+    </ngx-datatable-column>
+  </ngx-datatable>
+  
+</div>

@@ -52,4 +52,30 @@ export class ShortenedLinkService {
   getClientLink() : string {
     return AppLocal.CURRENT_URL + "i/";
   }
+
+  list(page : number, pageSize : number) : Observable<any> {
+    let headers = new Headers({
+      'Content-Type': 'application/x-www-form-urlencoded'
+    });
+    let options = new RequestOptions({ headers: headers });
+
+    let params: URLSearchParams = new URLSearchParams();
+    params.append('page', page + "");
+    params.append("pageSize", pageSize + "");
+    return this._http.get("./api/link/default/list?" + params.toString(), options)
+                .map((response) => response.json());
+    
+  }
+
+  total() : Observable<number> {
+    let headers = new Headers({
+      'Content-Type': 'application/x-www-form-urlencoded'
+    });
+    let options = new RequestOptions({ headers: headers });
+
+    let params: URLSearchParams = new URLSearchParams();
+    return this._http.get("./api/link/default/total", options)
+                .map((response) => response.json());
+    
+  }
 }
