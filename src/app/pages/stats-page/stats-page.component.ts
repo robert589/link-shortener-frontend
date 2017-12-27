@@ -13,7 +13,7 @@ export class StatsPageComponent implements OnInit {
   page: number = 1;
 
   @Input()
-  pageSize: number = 2;
+  pageSize: number = 10;
 
   total : number  = 0;
 
